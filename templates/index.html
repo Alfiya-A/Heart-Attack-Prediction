@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heart Disease</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
+        <style>
+            body{
+                background: rgb(238,174,202);
+                background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+                text-align: center;
+            }
+            .title{
+                text-align: center;
+                color:firebrick;
+            }
+            table, th, td {
+                border: 1px solid;
+            }
+            input{
+                width: 30%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border: 2px solid black;
+                background-color: rgb(238,174,202);
+                background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+                border-radius: 4px;
+                color: white;
+            }
+            .btn{
+                background-color:azure;
+                border:none;
+                color:black;
+                padding:15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display:inline-block;
+                font-size:16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1>Heart Attack Prediction</h1>
+        </div>
+        <div class="login">
+            <form action="{{url_for('predict')}}" method="post">
+                <label for="age">Age</label><br>
+                <input type="text" id="age" placeholder="Age" name="age"><br>
+                <br>
+                <label for="sex">Sex</label><br>
+                <input type="text" id="sex" placeholder="Sex" name="sex"><br>
+                <br>
+                <label for="cp">CP</label><br>
+                <input type="text" id="cp" placeholder="Chest Pain Type" name="cp"><br>
+                <br>
+                <label for="trtbps">Trtbps</label><br>
+                <input type="text" id="trtbps" placeholder="Resting Blood Pressure" name="trtbps"><br>
+                <br>
+                <label for="chol">Chol</label><br>
+                <input type="text" id="chol" placeholder="Cholestoral" name="chol"><br>
+                <br>
+                <label for="fbs">Fbs</label><br>
+                <input type="text" id="fbs" placeholder="Fasting Blood Sugar" name="fbs"><br>
+                <br>
+                <label for="restecg">Restecg</label><br>
+                <input type="text" id="restecg" placeholder="Resting ECG" name="restecg"><br>
+                <br>
+                <label for="thalachh">Thalachh</label><br>
+                <input type="text" id="thalachh" placeholder="Maximum Heart Rate" name="thalachh"><br>
+                <br>
+                <label for="exng">Exng</label><br>
+                <input type="text" id="exng" placeholder="Exercise Induced Angina" name="exng"><br>
+                <br>
+                <label for="oldpeak">Oldpeak</label><br>
+                <input type="text" id="oldpeak" placeholder="Previous Peak" name="oldpeak"><br>
+                <br>
+                <label for="slp">Slp</label><br>
+                <input type="text" id="slp" placeholder="Coronary Artery Anomaly" name="slp"><br>
+                <br>
+                <label for="caa">Caa</label><br>
+                <input type="text" id="caa" placeholder="Speech Language Pathologist" name="caa"><br>
+                <br>
+                <label for="thall">Thall</label><br>
+                <input type="text" id="thall" placeholder="Thalassemia" name="thall"><br>
+                <br>
+                <button type="submit" class="btn" align="center">Predict</button>
+            </form>
+            <br>
+            {{ prediction_text}}
+        </div>
+    </body>
+</html>
+
